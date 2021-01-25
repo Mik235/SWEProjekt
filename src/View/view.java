@@ -1,4 +1,4 @@
-package view;
+package View;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-public class view extends JFrame{
+public class View extends JFrame{
 	Container cp = getContentPane();
 	
 	JLabel ueberschrift = new JLabel("ABC Bank - die Bank an Ihrer Seite");
@@ -37,7 +37,7 @@ public class view extends JFrame{
 	JTextField tstatus = new JTextField(60);
 	
 	
-	public view(){
+	public View(){
 		ueberschrift.setFont(new Font("Arial", Font.CENTER_BASELINE, 22));
 		ueberschrift.setForeground(Color.darkGray);
 		
