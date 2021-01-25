@@ -1,4 +1,4 @@
 package Model;
 
-public abstract class Konto {
+public class Konto {
 }
