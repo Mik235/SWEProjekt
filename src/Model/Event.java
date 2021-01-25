@@ -3,7 +3,7 @@ package Model;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Eventt2 implements Serializable {
+public class Event implements Serializable {
     int datiZeilnr;
     String sachbekürz;
     int Kontonr;
@@ -12,7 +12,7 @@ public class Eventt2 implements Serializable {
     double Kontostandndb;
     Date Buchungsdatum;
 
-    public Eventt2(int datiZeilnr, String sachbekürz, int kontonr, double kontostandvdb, double buchungsbetrag, double kontostandndb) {
+    public Event(int datiZeilnr, String sachbekürz, int kontonr, double kontostandvdb, double buchungsbetrag, double kontostandndb) {
         this.datiZeilnr = datiZeilnr;
         this.sachbekürz = sachbekürz;
         Kontonr = kontonr;
