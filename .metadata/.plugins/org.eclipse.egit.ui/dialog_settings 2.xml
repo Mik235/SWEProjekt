@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="0"/>
+	<item key="GitSelectRepositoryPage.lastRepository" value="/Users/lisa-marieseverin/git/SWEProjekt1/.git"/>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/Mik235/SWEProjekt.git"/>
+		<item value="file:///Users/lisa-marieseverin/Desktop/Bildschirmfotos/SWEProjekt"/>
+		<item value="file:///Users/lisa-marieseverin/git/SWEProjekt"/>
+	</list>
+	<list key="EGit.KnownHosts">
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+		<item value="bitbucket.org"/>
+	</list>
+	<section name="GitImportWizard">
+		<item key="GitProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+	</section>
+</section>
