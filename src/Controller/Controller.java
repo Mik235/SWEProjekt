@@ -10,6 +10,6 @@ public class Controller {
     public Controller() {
         v=new View();
         m=new Bankingm();
-        
+
     }
 }

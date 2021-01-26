@@ -5,16 +5,16 @@ import java.util.Date;
 
 public class Event implements Serializable {
     int datiZeilnr;
-    String sachbekürz;
+    String sachbekuerz;
     int Kontonr;
     double Kontostandvdb;
     double Buchungsbetrag;
     double Kontostandndb;
     Date Buchungsdatum;
 
-    public Event(int datiZeilnr, String sachbekürz, int kontonr, double kontostandvdb, double buchungsbetrag, double kontostandndb) {
+    public Event(int datiZeilnr, String sachbekuerz, int kontonr, double kontostandvdb, double buchungsbetrag, double kontostandndb) {
         this.datiZeilnr = datiZeilnr;
-        this.sachbekürz = sachbekürz;
+        this.sachbekuerz = sachbekuerz;
         Kontonr = kontonr;
         Kontostandvdb = kontostandvdb;
         Buchungsbetrag = buchungsbetrag;
@@ -26,8 +26,8 @@ public class Event implements Serializable {
         return datiZeilnr;
     }
 
-    public String getSachbekürz() {
-        return sachbekürz;
+    public String getSachbekuerz() {
+        return sachbekuerz;
     }
 
     public int getKontonr() {
