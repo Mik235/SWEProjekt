@@ -1,5 +1,7 @@
 package View;
 
+import Controller.Controller;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -47,7 +49,7 @@ public class View extends JFrame{
 		JPanel plinks = new JPanel(new GridLayout(0,1, 0,10));
 		JPanel prechts = new JPanel(new GridLayout(0,1));
 		
-
+		bok.setActionCommand("rdy");
 		
 		plinks.add(lkontonr);
 		prechts.add(tkontonr);
@@ -95,6 +97,10 @@ public class View extends JFrame{
 		tkontost.setEditable(false);
 		tbetrag.setEditable(false);
 		tstatus.setEditable(false);
+	}
+	public void addlis(Controller c){
+		bok.addActionListener(c);
+		babbrechen.addActionListener(c);
 	}
 
 

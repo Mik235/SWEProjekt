@@ -8,8 +8,8 @@ public class LogDatei implements Serializable {
     public LogDatei() {
 
     }
-    public void addEintrag(String sachbekürz, int kontonr, double kontostandvdb, double buchungsbetrag, double kontostandndb){
-        events.add(new Event(events.size(),sachbekürz,kontonr,kontostandvdb,buchungsbetrag,kontostandndb));
+    public void addEintrag(String sachbekuerz, int kontonr, double kontostandvdb, double buchungsbetrag, double kontostandndb){
+        events.add(new Event(events.size(),sachbekuerz,kontonr,kontostandvdb,buchungsbetrag,kontostandndb));
 
     }
 
