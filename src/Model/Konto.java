@@ -3,6 +3,7 @@ package Model;
 import java.text.DecimalFormat;
 
 public abstract class Konto {
+
     protected int kontoNr;
     protected double kontoStand;
     protected String kontoTyp;
@@ -41,4 +42,5 @@ public abstract class Konto {
     public void setKontoTyp(String kontoTyp) {
         this.kontoTyp = kontoTyp;
     }
+
 }
