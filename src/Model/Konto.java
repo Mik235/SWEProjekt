@@ -3,9 +3,9 @@ package Model;
 import java.text.DecimalFormat;
 
 public abstract class Konto {
-    private int kontoNr;
-    private double kontoStand;
-    private String kontoTyp;
+    protected int kontoNr;
+    protected double kontoStand;
+    protected String kontoTyp;
 
     public Konto(int kontoNr, double kontoStand, String kontoTyp) {
         this.kontoNr = kontoNr;
