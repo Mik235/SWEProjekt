@@ -8,24 +8,28 @@ import java.util.Map;
 import java.util.Set;
 
 public class FileController implements Serializable {
+    private LogDatei l;
 
         //Speichert die Daten Binär
-        public void safeDataBinaer(ArrayList<String> safe) {
+        public void safeDataBinaer() {
             try {
                 FileOutputStream outt = new FileOutputStream("src/konten.dat");
                 ObjectOutputStream oo = new ObjectOutputStream(outt);
 
-                for (String safed: safe) {
-                    System.out.println("Output"+safed);
+
+
                     try {
-                        oo.writeObject(safed);
+                        oo.writeObject(l.txtkurzel);
 
 
 
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                }
+
+
+
+
 
                 oo.close();
 
@@ -56,7 +60,7 @@ public class FileController implements Serializable {
 
 
         //Schreibt die Dateien in eine .txt Datei
-        public void wrtxt(ArrayList<String>wr){
+        public void wrtxt(){
             Date tmp=new Date();
             String tmp_aus= tmp.toString();
             File dataout2=new File("src/"+tmp_aus+".txt");
@@ -64,9 +68,9 @@ public class FileController implements Serializable {
 
                 BufferedWriter wrrrrrr=new BufferedWriter(new FileWriter(dataout2));
 
-                for (int i = 0; i < wr.size(); i++) {
-                    wrrrrrr.append(wr.get(i).toString());
-                }
+
+                    wrrrrrr.append(l.txtkurzel);
+
                 wrrrrrr.close();
             }
             catch (Exception e){
