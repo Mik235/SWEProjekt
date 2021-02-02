@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 
 
 public class View extends JFrame{
+	//Erstellung der Labels und TextFields als public, um aus den anderen Klassen darauf zugreifen zu können.
 	Container cp = getContentPane();
 	
 	JLabel ueberschrift = new JLabel("ABC Bank - die Bank an Ihrer Seite");
@@ -40,14 +41,18 @@ public class View extends JFrame{
 	
 	
 	public View(){
+		//Einstellung der Schriftart der Überschrift
 		ueberschrift.setFont(new Font("Arial", Font.CENTER_BASELINE, 22));
 		ueberschrift.setForeground(Color.darkGray);
-		
+
+		//Anlegen von Paneln, um die Oberfläche zu sortieren
 		JPanel pbutton = new JPanel();
 		JPanel pstatus = new JPanel();
 		
 		JPanel plinks = new JPanel(new GridLayout(0,1, 0,10));
 		JPanel prechts = new JPanel(new GridLayout(0,1));
+
+		JPanel palles = new JPanel();
 		
 		bok.setActionCommand("rdy");
 		
@@ -69,10 +74,9 @@ public class View extends JFrame{
 		
 		pstatus.add(tstatus, BorderLayout.PAGE_END);
 		
-		//Alle Textfelder, ausser der Kontonr auf nicht Editierbar setzen
+
 		setEditablefalse();
-		
-		JPanel palles = new JPanel();
+
 		
 		palles.add(ueberschrift);
 		
@@ -92,6 +96,7 @@ public class View extends JFrame{
 	
 
 	private void setEditablefalse() {
+		//Alle Textfelder, außer der Kontonr auf nicht Editierbar setzen
 		// TODO Auto-generated method stub
 		tsachk.setEditable(false);
 		tkontost.setEditable(false);
@@ -99,11 +104,12 @@ public class View extends JFrame{
 		tstatus.setEditable(false);
 	}
 	public void addlis(Controller c){
+
 		bok.addActionListener(c);
 		babbrechen.addActionListener(c);
 	}
 
-
+//Getter + Setter
 	public Container getCp() {
 		return cp;
 	}
@@ -222,9 +228,4 @@ public class View extends JFrame{
 	public void setTstatus(JTextField tstatus) {
 		this.tstatus = tstatus;
 	}
-	
-	
-	
-	
-
 }

@@ -1,6 +1,7 @@
 package Controller;
 
-import Model.Bankingm;
+import Model.BankingModell;
+import Model.KontomitLog;
 import View.View;
 
 import java.awt.event.ActionEvent;
@@ -8,11 +9,11 @@ import java.awt.event.ActionListener;
 
 public class Controller implements ActionListener {
     View v;
-    Bankingm m;
+    BankingModell m;
 
     public Controller () {
         v=new View();
-        m=new Bankingm();
+        m=new BankingModell();
 
     }
 
