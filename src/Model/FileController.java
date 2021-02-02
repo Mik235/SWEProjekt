@@ -3,10 +3,14 @@ package Model;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
+
 import java.util.Map;
 import java.util.Set;
 
 public class FileController implements Serializable {
+
+
+public class FileController {
 
     //Speichert die Daten Binär
     public void safeDataBinaer(ArrayList<String> safe) {
@@ -49,7 +53,10 @@ public class FileController implements Serializable {
             e.printStackTrace();
         }
     }
-    
+
+
+
+
 
     //Schreibt die Dateien in eine .txt Datei
     public void wrtxt(ArrayList<String>wr){
@@ -57,7 +64,9 @@ public class FileController implements Serializable {
         String tmp_aus= tmp.toString();
         File dataout2=new File("src/"+tmp_aus+".txt");
         try {
+
             BufferedWriter wrrrrrr=new BufferedWriter(new FileWriter(dataout2));
+
             for (int i = 0; i < wr.size(); i++) {
                 wrrrrrr.append(wr.get(i).toString());
             }
