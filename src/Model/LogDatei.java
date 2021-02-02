@@ -10,6 +10,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class LogDatei implements Serializable {
+    String txtkurzel;
+
     ArrayList<Event> events =new ArrayList<>();
     public LogDatei() {
 
@@ -20,17 +22,12 @@ public class LogDatei implements Serializable {
         LocalDate now = LocalDate.now();
         DateTimeFormatter df = DateTimeFormatter.ofPattern("dd.MM.yyyy kk:mm");
 
-        String einfuegen = events.size() +" " +  sachbekuerz + " " + kontonr + " "+ kontostandvdb + " " + buchungsbetrag + " " + kontostandndb + now.format(df) ;
-        txtschreiben(einfuegen);
+        txtkurzel = events.size() +" " +  sachbekuerz + " " + kontonr + " "+ kontostandvdb + " " + buchungsbetrag + " " + kontostandndb + now.format(df) ;
+
     }
 
-    private void txtschreiben(String einfuegen) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("logDatei.txt", true))) {
-            bw.write(String.valueOf(einfuegen + "\n"));
-            bw.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private String txtKuerzelholen() {
+       return txtkurzel;
     }
 
 
