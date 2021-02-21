@@ -37,7 +37,7 @@ public class View extends JFrame{
 	JButton bok = new JButton("OK");
 	JButton babbrechen = new JButton("Abbrechen");
 	
-	JTextField tstatus = new JTextField(60);
+	JTextField tstatus = new JTextField(30);
 	
 	
 	public View(){

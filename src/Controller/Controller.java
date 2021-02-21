@@ -26,7 +26,7 @@ public class Controller implements ActionListener, WindowListener {
         if(e.getActionCommand().equals("rdy")){
             System.out.println("Es wurde ok gedrückt");
             System.out.println(v.getTkontonr().getText());
-            m.searchorcreate(v.getTkontonr().getText());
+            v.getTstatus().setText(m.searchorcreate(v.getTkontonr().getText()));
 
         }
         if(e.getActionCommand().equals("Abbrechen")){
