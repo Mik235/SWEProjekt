@@ -1,7 +1,6 @@
 package Model;
 
 import javax.swing.*;
-import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -10,6 +9,7 @@ public class BankingModell {
     FileController writer= new FileController();
     int selkonto=0;
     Random rdm = new Random();
+    boolean exists =false;
 
     public BankingModell() {
 
@@ -22,7 +22,7 @@ public class BankingModell {
             konten.add(new KontomitLog(new GiroKonto(knr,0,"Girokonto")));
         }
     }
-   
+
     public String searchorcreate(String in){
         if(in.equals("neues Konto")){
             String intmp= JOptionPane.showInputDialog(null,"Was für ein Konto soll erstellt werden? Sparbuch oder Girokonto.");
@@ -74,6 +74,8 @@ public class BankingModell {
                 }
                 selkonto = (int) ksuchen(tmp);
                 System.out.println(selkonto);
+                exists=true;
+
 
             } catch (NumberFormatException e) {
                 e.printStackTrace();
@@ -94,6 +96,7 @@ public class BankingModell {
 
         }
         System.out.println("NO");
+        exists=false;
         return null;
     }
 
@@ -102,5 +105,16 @@ public class BankingModell {
     }
     public void readData(){
        konten= writer.readBinaer();
+    }
+
+    public boolean isExists() {
+        return exists;
+    }
+
+    public int getSelkonto() {
+        return selkonto;
+    }
+    public void buchen(String input){
+        
     }
 }

@@ -107,6 +107,8 @@ public class View extends JFrame{
 
 		bok.addActionListener(c);
 		babbrechen.addActionListener(c);
+		tsachk.addActionListener(c);
+		tkontonr.addActionListener(c);
 	}
 
 //Getter + Setter
