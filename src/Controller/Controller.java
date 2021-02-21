@@ -14,6 +14,7 @@ public class Controller implements ActionListener {
     public Controller () {
         v=new View();
         m=new BankingModell();
+        v.addlis(this);
 
     }
 
@@ -21,6 +22,7 @@ public class Controller implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("rdy")){
             System.out.println("Es wurde ok gedrückt");
+
 
         }
         if(e.getActionCommand().equals("Abbrechen")){

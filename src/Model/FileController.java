@@ -9,21 +9,18 @@ import java.util.Set;
 public class FileController implements Serializable {
 
     //Speichert die Daten Binär
-    public void safeDataBinaer(ArrayList<String> safe) {
+    public void safeDataBinaer(ArrayList<KontomitLog> safe) {
         try {
             FileOutputStream outt = new FileOutputStream("src/konten.dat");
             ObjectOutputStream oo = new ObjectOutputStream(outt);
 
-            for (String safed: safe) {
-                System.out.println("Output"+safed);
-                try {
-                    oo.writeObject(safed);
+            try {
+                oo.writeObject(safe);
 
 
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
             oo.close();
@@ -39,11 +36,11 @@ public class FileController implements Serializable {
         try {
             FileInputStream outt = new FileInputStream("src/konten.dat");
             ObjectInputStream oi = new ObjectInputStream(outt);
-            for (int i = 0; i <1 ; i++) {
 
-                String konto = (String) oi.readObject();
+
+                ArrayList<KontomitLog> konto = (ArrayList<KontomitLog>) oi.readObject();
                 System.out.println(konto);
-            }
+            
 
         }catch (IOException  | ClassNotFoundException e){
             e.printStackTrace();

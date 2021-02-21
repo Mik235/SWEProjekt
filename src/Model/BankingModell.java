@@ -16,4 +16,11 @@ public class BankingModell {
             konten.add(new KontomitLog(new GiroKonto(konten.size(),0,"Girokonto")));
         }
     }
+
+    public ArrayList<KontomitLog> getKonten() {
+        return konten;
+    }
+    public  int  ksuchen (int kontonummer ){
+        return 0;
+    }
 }
