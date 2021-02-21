@@ -92,6 +92,7 @@ public class View extends JFrame{
 		setMaximumSize(new Dimension(500,247));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);    
 		setVisible(true);
+		setResizable(false);
 	}
 	
 
@@ -109,6 +110,7 @@ public class View extends JFrame{
 		babbrechen.addActionListener(c);
 		tsachk.addActionListener(c);
 		tkontonr.addActionListener(c);
+		tkontonr.addMouseListener(c);
 	}
 
 //Getter + Setter

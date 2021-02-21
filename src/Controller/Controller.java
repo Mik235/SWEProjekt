@@ -5,12 +5,9 @@ import Model.KontomitLog;
 import View.View;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 
-public class Controller implements ActionListener, WindowListener {
+public class Controller implements ActionListener, WindowListener, MouseListener {
     View v;
     BankingModell m;
 
@@ -38,7 +35,11 @@ public class Controller implements ActionListener, WindowListener {
                     v.getBok().setText("Buchen");
                     if(v.getTbetrag().getText().isEmpty()==false){
                         System.out.println("yeet");
-                        m.buchen(v.getTbetrag().getText());
+                        m.buchen(v.getTbetrag().getText(),v.getTsachk().getText());
+                        v.getTkontost().setText(Double.toString(m.getKonten().get(m.getSelkonto()).getK().getKontoStand()));
+                        v.getTsachk().setText("");
+                        v.getTbetrag().setText("");
+                        v.getTbetrag().setEditable(false);
                     }
                     else {
                         v.getTstatus().setText("Bitte einen validen Betrag eingeben");
@@ -98,5 +99,32 @@ public class Controller implements ActionListener, WindowListener {
     @Override
     public void windowDeactivated(WindowEvent e) {
         m.safedata();
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        if(e.getSource().equals(v.getTkontonr())){
+            v.getTstatus().setText("");
+        }
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
     }
 }

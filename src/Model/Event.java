@@ -22,6 +22,19 @@ public class Event implements Serializable {
         Buchungsdatum=new Date();
     }
 
+    @Override
+    public String toString() {
+        return "Event{" +
+                "datiZeilnr=" + datiZeilnr +
+                ", sachbekuerz='" + sachbekuerz + '\'' +
+                ", Kontonr=" + Kontonr +
+                ", Kontostandvdb=" + Kontostandvdb +
+                ", Buchungsbetrag=" + Buchungsbetrag +
+                ", Kontostandndb=" + Kontostandndb +
+                ", Buchungsdatum=" + Buchungsdatum +
+                '}';
+    }
+
     public int getDatiZeilnr() {
         return datiZeilnr;
     }

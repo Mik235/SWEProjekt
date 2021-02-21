@@ -1,6 +1,7 @@
 package Model;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
@@ -48,7 +49,20 @@ public class FileController implements Serializable {
             return null;
         }
     }
-    
+    public <T> void append( ArrayList<T> contentToAppend,String kontonr) {
+        Date tmp=new Date();
+        String tmp_aus= tmp.toString();
+        tmp_aus=tmp_aus.replace(':','_');
+        try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("src/"+tmp_aus+" Kontonr_"+kontonr+".log", true), StandardCharsets.UTF_8))) {
+            for (T s : contentToAppend) {
+                bw.write(s.toString() + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     //Schreibt die Dateien in eine .txt Datei
     public void wrtxt(ArrayList<String>wr){

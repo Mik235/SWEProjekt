@@ -13,6 +13,7 @@ public class BankingModell {
 
     public BankingModell() {
 
+        konten.add(new KontomitLog(new SparkKonto(0,0,"Sparkonto")));
     }
     public void addkonto(int typ,int knr){
         if(typ==0){
@@ -88,6 +89,7 @@ public class BankingModell {
         return konten;
     }
     public  Number  ksuchen (int kontonummer ){
+        System.out.println(konten.size());
         for (int i = 0; i < konten.size(); i++) {
             if(konten.get(i).getK().getKontoNr()==kontonummer){
                 System.out.println(i);
@@ -114,7 +116,17 @@ public class BankingModell {
     public int getSelkonto() {
         return selkonto;
     }
-    public void buchen(String input){
-        
+    public void buchen(String input,String sachbe){
+        Double tmp=0.0;
+        try {
+            tmp =Double.parseDouble(input);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null,"NUR ZAHLEN EINGEBEN!");
+            e.printStackTrace();
+
+        }
+
+        konten.get(selkonto).buchen(tmp,sachbe);
+        writer.append(konten.get(selkonto).getLog().getEvents(),Integer.toString(konten.get(selkonto).getK().getKontoNr()));
     }
 }
