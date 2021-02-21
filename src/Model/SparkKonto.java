@@ -1,6 +1,8 @@
 package Model;
 
-public class SparkKonto extends Konto
+import java.io.Serializable;
+
+public class SparkKonto extends Konto implements Serializable
 {
 
     public SparkKonto(int kontoNr, double kontoStand, String kontoTyp) {

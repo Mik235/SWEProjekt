@@ -1,8 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
-public abstract class Konto {
+public abstract class Konto implements Serializable {
 
     protected int kontoNr;
     protected double kontoStand;

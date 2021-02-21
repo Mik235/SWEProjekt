@@ -16,4 +16,12 @@ public class KontomitLog implements Serializable {
         log.addEintrag(sachbea,k.getKontoNr(),k.getKontoStand(),betrag,(k.getKontoStand()+betrag));
         k.setKontoStand(k.getKontoStand()+betrag);
     }
+
+    public LogDatei getLog() {
+        return log;
+    }
+
+    public Konto getK() {
+        return k;
+    }
 }

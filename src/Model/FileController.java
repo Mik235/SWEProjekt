@@ -24,6 +24,7 @@ public class FileController implements Serializable {
             }
 
             oo.close();
+            outt.close();
 
 
         }catch (IOException e){
@@ -32,18 +33,19 @@ public class FileController implements Serializable {
         }
     }
     //Liest die Binär dateien aus
-    public void readBinaer(){
+    public ArrayList<KontomitLog> readBinaer(){
         try {
             FileInputStream outt = new FileInputStream("src/konten.dat");
             ObjectInputStream oi = new ObjectInputStream(outt);
 
 
                 ArrayList<KontomitLog> konto = (ArrayList<KontomitLog>) oi.readObject();
-                System.out.println(konto);
-            
+                return konto;
+
 
         }catch (IOException  | ClassNotFoundException e){
             e.printStackTrace();
+            return null;
         }
     }
     
