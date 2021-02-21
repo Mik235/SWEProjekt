@@ -111,6 +111,7 @@ public class View extends JFrame{
 		tsachk.addActionListener(c);
 		tkontonr.addActionListener(c);
 		tkontonr.addMouseListener(c);
+		addWindowListener(c);
 	}
 
 //Getter + Setter
