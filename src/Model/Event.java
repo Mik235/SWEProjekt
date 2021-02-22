@@ -11,7 +11,9 @@ public class Event implements Serializable {
     double Buchungsbetrag;
     double Kontostandndb;
     Date Buchungsdatum;
-
+    /**
+     * Erstellung eines neuen Eventes
+     */
     public Event(int datiZeilnr, String sachbekuerz, int kontonr, double kontostandvdb, double buchungsbetrag, double kontostandndb) {
         this.datiZeilnr = datiZeilnr;
         this.sachbekuerz = sachbekuerz;
@@ -21,7 +23,9 @@ public class Event implements Serializable {
         Kontostandndb = kontostandndb;
         Buchungsdatum=new Date();
     }
-
+    /**
+     * to String methode für die Ausgabe
+     */
     @Override
     public String toString() {
         return "Event{" +

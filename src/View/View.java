@@ -17,7 +17,9 @@ import javax.swing.JTextField;
 
 
 public class View extends JFrame{
-	//Erstellung der Labels und TextFields als public, um aus den anderen Klassen darauf zugreifen zu können.
+	/**
+	 Erstellung der Labels und TextFields als public, um aus den anderen Klassen darauf zugreifen zu können.
+	 */
 	Container cp = getContentPane();
 	
 	JLabel ueberschrift = new JLabel("ABC Bank - die Bank an Ihrer Seite");
@@ -36,6 +38,7 @@ public class View extends JFrame{
 	
 	JButton bok = new JButton("OK");
 	JButton babbrechen = new JButton("Abbrechen");
+	JButton bregister = new JButton("Registrieren");
 	
 	JTextField tstatus = new JTextField(30);
 	
@@ -70,6 +73,7 @@ public class View extends JFrame{
 		
 		pbutton.add(bok);
 		pbutton.add(babbrechen);
+		pbutton.add(bregister);
 		
 		
 		pstatus.add(tstatus, BorderLayout.PAGE_END);
@@ -83,7 +87,7 @@ public class View extends JFrame{
 		palles.add(plinks);
 		palles.add(prechts);
 		palles.add(pbutton, BorderLayout.WEST);
-		
+		bregister.setActionCommand("reg");
 		palles.add(pstatus);
 		
 		
@@ -118,9 +122,11 @@ public class View extends JFrame{
 		tkontonr.addActionListener(c);
 		tkontonr.addMouseListener(c);
 		addWindowListener(c);
+		bregister.addActionListener(c);
 	}
-
-//Getter + Setter
+	/**
+	 * Getter und setter
+	 */
 	public Container getCp() {
 		return cp;
 	}

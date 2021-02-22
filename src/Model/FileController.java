@@ -9,7 +9,10 @@ import java.util.Set;
 
 public class FileController implements Serializable {
 
-    //Speichert die Daten Binär
+    /**
+     * Speicherung der übergebenen ArrayList in Binär
+     * @param safe ist die zu Specihernde Arraylist
+     */
     public void safeDataBinaer(ArrayList<KontomitLog> safe) {
         try {
             FileOutputStream outt = new FileOutputStream("src/konten.dat");
@@ -33,7 +36,9 @@ public class FileController implements Serializable {
 
         }
     }
-    //Liest die Binär dateien aus
+    /**
+     * Auslesung der binärdateien
+     */
     public ArrayList<KontomitLog> readBinaer(){
         try {
             FileInputStream outt = new FileInputStream("src/konten.dat");
@@ -49,7 +54,11 @@ public class FileController implements Serializable {
             return null;
         }
     }
-    //Schreibt die Dateien in eine .txt Datei
+    /**
+     * Speicherung der Kontologs
+     * @param contentToAppend ist der zu Schreibende Text
+     * @param kontonr ist die Kontonummer, welche im dateinamen vorkommen soll.
+     */
     public <T> void append( ArrayList<T> contentToAppend,String kontonr) {
         Date tmp=new Date();
         String tmp_aus= tmp.toString();

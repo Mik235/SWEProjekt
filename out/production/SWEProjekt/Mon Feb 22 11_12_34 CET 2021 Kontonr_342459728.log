@@ -1,0 +1,2 @@
+Event{datiZeilnr=0, sachbekuerz='HETZ', Kontonr=342459728, Kontostandvdb=0.0, Buchungsbetrag=7.0, Kontostandndb=7.0, Buchungsdatum=Sun Feb 21 20:21:24 CET 2021}
+Event{datiZeilnr=1, sachbekuerz='s', Kontonr=342459728, Kontostandvdb=7.0, Buchungsbetrag=-5.0, Kontostandndb=2.0, Buchungsdatum=Mon Feb 22 11:12:34 CET 2021}

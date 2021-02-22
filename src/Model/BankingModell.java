@@ -157,7 +157,47 @@ public class BankingModell {
     public int getSelkonto() {
         return selkonto;
     }
-
+    public String newKonto(){
+        String intmp= JOptionPane.showInputDialog(null,"Was für ein Konto soll erstellt werden? Sparbuch oder Girokonto.");
+        if(intmp.equals("Sparbuch")){
+            int neueKOntoNummer =rdm.nextInt();
+            if(neueKOntoNummer<0){
+                neueKOntoNummer=neueKOntoNummer*-1;
+            }
+            while (true){
+                if(ksuchen(neueKOntoNummer)!=null){
+                    neueKOntoNummer=rdm.nextInt();
+                    if(neueKOntoNummer<0){
+                        neueKOntoNummer=neueKOntoNummer*-1;
+                    }
+                }
+                else break;
+            }
+            addkonto(0,neueKOntoNummer);
+            return Integer.toString(neueKOntoNummer);
+        }
+        else if(intmp.equals("Girokonto")){
+            int neueKOntoNummer =rdm.nextInt();
+            if(neueKOntoNummer<0){
+                neueKOntoNummer=neueKOntoNummer*-1;
+            }
+            while (true){
+                if(ksuchen(neueKOntoNummer)!=null){
+                    neueKOntoNummer=rdm.nextInt();
+                    if(neueKOntoNummer<0){
+                        neueKOntoNummer=neueKOntoNummer*-1;
+                    }
+                }
+                else break;
+            }
+            addkonto(1,neueKOntoNummer);
+            return Integer.toString(neueKOntoNummer);
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"Kein valider Kontotyp eingegeben");
+        }
+        return "";
+    }
     /**
      * buchen bucht die angegebene Menge entweder ab oder zu
      * Anschließend wird der Vorgang in der Arraylist und in der Log Datei gespeichert

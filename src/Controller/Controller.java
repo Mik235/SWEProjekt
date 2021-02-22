@@ -61,6 +61,9 @@ public class Controller implements ActionListener, WindowListener, MouseListener
             m.safedata();
             System.exit(0);
         }
+        if(e.getActionCommand().equals("reg")){
+            v.getTstatus().setText(m.newKonto());
+        }
 
     }
 
