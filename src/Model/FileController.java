@@ -49,6 +49,7 @@ public class FileController implements Serializable {
             return null;
         }
     }
+    //Schreibt die Dateien in eine .txt Datei
     public <T> void append( ArrayList<T> contentToAppend,String kontonr) {
         Date tmp=new Date();
         String tmp_aus= tmp.toString();
@@ -64,21 +65,6 @@ public class FileController implements Serializable {
 
 
 
-    //Schreibt die Dateien in eine .txt Datei
-    public void wrtxt(ArrayList<String>wr){
-        Date tmp=new Date();
-        String tmp_aus= tmp.toString();
-        File dataout2=new File("src/"+tmp_aus+".txt");
-        try {
-            BufferedWriter wrrrrrr=new BufferedWriter(new FileWriter(dataout2));
-            for (int i = 0; i < wr.size(); i++) {
-                wrrrrrr.append(wr.get(i).toString());
-            }
-            wrrrrrr.close();
-        }
-        catch (Exception e){
-            System.out.println(e);
-            System.out.println("3");
-        }
-    }
+
+
 }

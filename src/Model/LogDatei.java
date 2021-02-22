@@ -21,9 +21,6 @@ public class LogDatei implements Serializable {
 
         LocalDate now = LocalDate.now();
         DateTimeFormatter df = DateTimeFormatter.ofPattern("dd.MM.yyyy kk:mm");
-
-        //txtkurzel = events.size() +" " +  sachbekuerz + " " + kontonr + " "+ kontostandvdb + " " + buchungsbetrag + " " + kontostandndb + now.format(df) ;
-
     }
 
     private String txtKuerzelholen() {
