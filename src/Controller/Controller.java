@@ -37,10 +37,7 @@ public class Controller implements ActionListener, WindowListener, MouseListener
                     v.getTbetrag().setEditable(true);
                     v.getBok().setText("Buchen");
                     if(v.getTbetrag().getText().isEmpty()==false){
-<<<<<<< HEAD
-=======
                         //Methode buchen wird aufgerufen
->>>>>>> main
                         m.buchen(v.getTbetrag().getText(),v.getTsachk().getText());
                         v.getTkontost().setText(Double.toString(m.getKonten().get(m.getSelkonto()).getK().getKontoStand()));
                         v.getTsachk().setText("");
