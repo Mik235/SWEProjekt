@@ -12,10 +12,10 @@ public class BankingModell {
     boolean exists =false;
 
     public BankingModell() {
-
         konten.add(new KontomitLog(new SparkKonto(0,0,"Sparkonto")));
     }
     public void addkonto(int typ,int knr){
+        //Konten anlegen
         if(typ==0){
            konten.add(new KontomitLog(new SparkKonto(knr,0,"Sparkonto")));
         }
@@ -25,11 +25,15 @@ public class BankingModell {
     }
 
     public String searchorcreate(String in){
+
         if(in.equals("neues Konto")){
+            //Neues Konto anlegen
             String intmp= JOptionPane.showInputDialog(null,"Was für ein Konto soll erstellt werden? Sparbuch oder Girokonto.");
             if(intmp.equals("Sparbuch")){
+                //Mit Kontotyp Sparbuch anlegen
                 int neueKOntoNummer =rdm.nextInt();
                 if(neueKOntoNummer<0){
+                    //Automatische Vergabe der Kontonr
                     neueKOntoNummer=neueKOntoNummer*-1;
                 }
                 while (true){
@@ -45,6 +49,7 @@ public class BankingModell {
                 return Integer.toString(neueKOntoNummer);
             }
                 else if(intmp.equals("Girokonto")){
+                    //Konto mit dem Typ Girokonto anlegen
                 int neueKOntoNummer =rdm.nextInt();
                 if(neueKOntoNummer<0){
                     neueKOntoNummer=neueKOntoNummer*-1;
@@ -67,16 +72,17 @@ public class BankingModell {
 
         }
         else {
+            //Es soll kein neues Konto angelegt werden, Kontonr wird geprüft
             int tmp=0;
             try {
                 tmp=Integer.parseInt(in);
                 if(ksuchen(tmp)==null){
+                    //Kontonr existiert nicht
                     return "Keine Valide/Verfügbare Kontonummer";
                 }
                 selkonto = (int) ksuchen(tmp);
                 System.out.println(selkonto);
                 exists=true;
-
 
             } catch (NumberFormatException e) {
                 e.printStackTrace();
@@ -89,6 +95,7 @@ public class BankingModell {
         return konten;
     }
     public  Number  ksuchen (int kontonummer ){
+        //Kontonr in existierenden Konten suchen
         System.out.println(konten.size());
         for (int i = 0; i < konten.size(); i++) {
             if(konten.get(i).getK().getKontoNr()==kontonummer){

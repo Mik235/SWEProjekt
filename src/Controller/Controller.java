@@ -16,7 +16,6 @@ public class Controller implements ActionListener, WindowListener, MouseListener
         m=new BankingModell();
         v.addlis(this);
         m.readData();
-
     }
 
     @Override
