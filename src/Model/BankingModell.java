@@ -10,11 +10,24 @@ public class BankingModell {
     int selkonto=0;
     Random rdm = new Random();
     boolean exists =false;
-    
+
+    /**
+     * BankinModell erstellt neues Konto
+     *
+     * 
+     */
     public BankingModell() {
 
         konten.add(new KontomitLog(new SparkKonto(0,0,"Sparkonto")));
     }
+
+    /**
+     *
+     * @param typ übergibt welcher Kontotyp erstellt werden soll
+     *            0 = Sparkonto
+     *            1 = Girokonto
+     * @param knr übergibt die erstellte Kontonummer
+     */
     public void addkonto(int typ,int knr){
         if(typ==0){
            konten.add(new KontomitLog(new SparkKonto(knr,0,"Sparkonto")));
@@ -23,6 +36,15 @@ public class BankingModell {
             konten.add(new KontomitLog(new GiroKonto(knr,0,"Girokonto")));
         }
     }
+
+    /**
+     * searchcreate checked ob ein Konto erstellt werden soll oder nicht.
+     * Im Fall, dass ein Konto erstellt werden soll wird anschließend der Typ abegefragt.
+     *Anschließend wird für das jeweilige Konto eine zufällige Kontonummer erstellt.
+     * Bei falsch eingabe werden die jeweilige Fehlermeldung angezeigt
+     * @param in Um ein neues Konto zu erstellen muss "neues Konto" geschrieben werden
+     * @return Wenn die Konto erstellung erfolgreich war wird die erstellte Kontonummer als String returned.
+     */
 
     public String searchorcreate(String in){
         if(in.equals("neues Konto")){
@@ -74,7 +96,6 @@ public class BankingModell {
                     return "Keine Valide/Verfügbare Kontonummer";
                 }
                 selkonto = (int) ksuchen(tmp);
-                System.out.println(selkonto);
                 exists=true;
 
 
@@ -85,11 +106,21 @@ public class BankingModell {
         }
         return "";
     }
+
+    /**
+     * Gibt die Erstellte Arraylist vom Typ KontomitLog
+     * @return Es werden die eingetragenen Konten returned
+     */
     public ArrayList<KontomitLog> getKonten() {
         return konten;
     }
+
+    /**
+     * ksuchen sucht die übergebene Kontonummer in der Liste aller Konten
+     * @param kontonummer die gesuchte Kotnonummer
+     * @return das gefundene Konto
+     */
     public  Number  ksuchen (int kontonummer ){
-        System.out.println(konten.size());
         for (int i = 0; i < konten.size(); i++) {
             if(konten.get(i).getK().getKontoNr()==kontonummer){
                 System.out.println(i);
@@ -97,18 +128,28 @@ public class BankingModell {
             }
 
         }
-        System.out.println("NO");
         exists=false;
         return null;
     }
 
+    /**
+     * safedata speichert die Daten Binär in einer .dat Datei
+     */
     public void safedata() {
         writer.safeDataBinaer(konten);
     }
+
+    /**
+     * Liest die Binären Daten aus der Datei aus
+     */
     public void readData(){
        konten= writer.readBinaer();
     }
 
+    /**
+     * Prüft ob Konto existiert
+     * @return gibt True zurück wenn Konto existiert sonst false
+     */
     public boolean isExists() {
         return exists;
     }
@@ -116,6 +157,13 @@ public class BankingModell {
     public int getSelkonto() {
         return selkonto;
     }
+
+    /**
+     * buchen bucht die angegebene Menge entweder ab oder zu
+     * Anschließend wird der Vorgang in der Arraylist und in der Log Datei gespeichert
+     * @param input Geld Summe
+     * @param sachbe Welcher Sachbearbeiter die Buchung bearbeitet hat
+     */
     public void buchen(String input,String sachbe){
         Double tmp=0.0;
         try {
