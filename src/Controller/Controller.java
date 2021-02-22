@@ -21,20 +21,25 @@ public class Controller implements ActionListener, WindowListener, MouseListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //Prüfen ob Button ok gedrückt wurde
         if(e.getActionCommand().equals("rdy")){
             System.out.println("Es wurde ok gedrückt");
             System.out.println(v.getTkontonr().getText());
+            //im Modell nach der Kontonummer suchen
             v.getTstatus().setText(m.searchorcreate(v.getTkontonr().getText()));
 
             if(m.isExists()==true){
                 v.getBok().setText("Weiter");
+                //Button ok auf Weiter setzten
                 v.getTsachk().setEditable(true);
+                //Sachbearbeiter Textfeld auf Editierbar setzten
                 v.getTkontost().setText(Double.toString(m.getKonten().get(m.getSelkonto()).getK().getKontoStand()));
                 if(v.getTsachk().getText().isEmpty()==false){
+                    //Betragfeld auf editierbar setzten und Button ok auf Buchen setzten
                     v.getTbetrag().setEditable(true);
                     v.getBok().setText("Buchen");
                     if(v.getTbetrag().getText().isEmpty()==false){
-                        System.out.println("yeet");
+                        //Methode buchen wird aufgerufen
                         m.buchen(v.getTbetrag().getText(),v.getTsachk().getText());
                         v.getTkontost().setText(Double.toString(m.getKonten().get(m.getSelkonto()).getK().getKontoStand()));
                         v.getTsachk().setText("");
