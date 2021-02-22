@@ -9,6 +9,10 @@ public class SparkKonto extends Konto implements Serializable
         super(kontoNr, kontoStand, kontoTyp);
     }
 
+    /**
+     * buchen bucht die übergebene Summe auf das Konto
+     * @param p_buchen Summe der gewünschten Buchung auf das Konto
+     */
     @Override
     public void buchen(double p_buchen) {
        if (kontoStand + p_buchen <0){

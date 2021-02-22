@@ -14,7 +14,7 @@ public class BankingModell {
     /**
      * BankinModell erstellt neues Konto
      *
-     * 
+     *
      */
     public BankingModell() {
 
