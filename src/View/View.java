@@ -94,16 +94,22 @@ public class View extends JFrame{
 		setVisible(true);
 		setResizable(false);
 	}
-	
 
+	/**
+	 * setEditablefalse setzt alle Textfelder, außer der Kontonr auf nicht Editierbar setzen
+	 */
 	private void setEditablefalse() {
-		//Alle Textfelder, außer der Kontonr auf nicht Editierbar setzen
 		// TODO Auto-generated method stub
 		tsachk.setEditable(false);
 		tkontost.setEditable(false);
 		tbetrag.setEditable(false);
 		tstatus.setEditable(false);
 	}
+
+	/**
+	 * addLis addeed die einzelenen Events zu den instance Variablen
+	 * @param c ist der Controller
+	 */
 	public void addlis(Controller c){
 
 		bok.addActionListener(c);
