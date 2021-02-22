@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class FileController implements Serializable {
 
-    //Speichert die Daten Binär
+    //Speichert die Daten als binäer Datei
     public void safeDataBinaer(ArrayList<KontomitLog> safe) {
         try {
             FileOutputStream outt = new FileOutputStream("src/konten.dat");
@@ -18,37 +18,29 @@ public class FileController implements Serializable {
             try {
                 oo.writeObject(safe);
 
-
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             oo.close();
             outt.close();
 
-
         }catch (IOException e){
             e.printStackTrace();
-
         }
     }
-    //Liest die Binär dateien aus
+    //Liest die Daten aus der Binäer Datei aus und fügt sich in die Arraylist ein
     public ArrayList<KontomitLog> readBinaer(){
         try {
             FileInputStream outt = new FileInputStream("src/konten.dat");
             ObjectInputStream oi = new ObjectInputStream(outt);
-
-
                 ArrayList<KontomitLog> konto = (ArrayList<KontomitLog>) oi.readObject();
                 return konto;
-
-
         }catch (IOException  | ClassNotFoundException e){
             e.printStackTrace();
             return null;
         }
     }
+    //Wenn buchen erfolgreich ist, wird diese Methode aufgerufen
     public <T> void append( ArrayList<T> contentToAppend,String kontonr) {
         Date tmp=new Date();
         String tmp_aus= tmp.toString();
