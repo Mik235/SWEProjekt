@@ -10,7 +10,7 @@ public class BankingModell {
     int selkonto=0;
     Random rdm = new Random();
     boolean exists =false;
-
+    
     public BankingModell() {
 
         konten.add(new KontomitLog(new SparkKonto(0,0,"Sparkonto")));

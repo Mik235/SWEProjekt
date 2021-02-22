@@ -22,7 +22,6 @@ public class Controller implements ActionListener, WindowListener, MouseListener
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("rdy")){
-            System.out.println("Es wurde ok gedrückt");
             System.out.println(v.getTkontonr().getText());
             v.getTstatus().setText(m.searchorcreate(v.getTkontonr().getText()));
 
@@ -34,7 +33,6 @@ public class Controller implements ActionListener, WindowListener, MouseListener
                     v.getTbetrag().setEditable(true);
                     v.getBok().setText("Buchen");
                     if(v.getTbetrag().getText().isEmpty()==false){
-                        System.out.println("yeet");
                         m.buchen(v.getTbetrag().getText(),v.getTsachk().getText());
                         v.getTkontost().setText(Double.toString(m.getKonten().get(m.getSelkonto()).getK().getKontoStand()));
                         v.getTsachk().setText("");
